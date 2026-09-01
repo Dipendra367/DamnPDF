@@ -106,6 +106,3 @@ python test_smoke.py
 error messages (no path/stack leaks), UUID-only filenames on disk, and the
 retention sweeper deleting old files while keeping fresh ones.
 
-## License
-
-MIT
