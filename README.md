@@ -2,6 +2,10 @@
 
 A fast, self-hostable PDF toolkit. Merge, split, compress, and convert PDFs to/from Word, PowerPoint, Excel, and images — with no accounts, no tracking, and files that are deleted automatically within an hour.
 
+**🔗 Live:** [frontend-two-tan-72.vercel.app](https://frontend-two-tan-72.vercel.app) · API: [damnpdf.onrender.com](https://damnpdf.onrender.com) ([docs](https://damnpdf.onrender.com/docs))
+
+> Hosted on free tiers — the API may take 30–50s to wake up after inactivity.
+
 **The pitch:** most online PDF tools ask you to trust a black box. DamnPDF is open source, stores your files under random IDs, deletes everything automatically, and if that's still not enough — run it yourself.
 
 ## Tools
@@ -51,6 +55,13 @@ Engines: [pypdf](https://github.com/py-pdf/pypdf), [pdf2docx](https://github.com
 Heavy work (LibreOffice, Ghostscript, parsing) runs in a threadpool behind a
 concurrency cap, so one big conversion never blocks other users, and a burst of
 requests can't exhaust RAM.
+
+## Deployment
+
+Live setup: **Render** (Docker web service) for the FastAPI backend, **Vercel** for the React/Vite frontend.
+
+- Backend: point Render at the repo root, Docker environment, set `CORS_ORIGINS` to the frontend's origin.
+- Frontend: point Vercel at `frontend/` as the root directory, set `VITE_API_URL` to the backend's URL.
 
 ## Run it locally
 
@@ -105,4 +116,3 @@ python test_smoke.py
 16 checks: every endpoint's happy path, validation errors (400/413), clean
 error messages (no path/stack leaks), UUID-only filenames on disk, and the
 retention sweeper deleting old files while keeping fresh ones.
-
