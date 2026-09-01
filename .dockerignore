@@ -1,0 +1,10 @@
+.venv/
+.idea/
+__pycache__/
+temp_files/
+frontend/
+subprocess
+*.pdf
+*.xlsx
+simple_test*
+.git/

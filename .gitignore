@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.idea/
+temp_files/
+frontend/node_modules/
+frontend/dist/
+*.pdf
+*.xlsx
+*.pyc
+.env
+.DS_Store
+*.log
